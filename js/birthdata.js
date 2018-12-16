@@ -627,6 +627,22 @@ var birthData = [
         const births = birthData.filter(d => d.year === year);
         d3.select('#year-label').text(year);
         d3.selectAll('#chart-bar rect').data(births)
+            .transition()
+            .duration(600)
+            .ease(d3.easeBackInOut)
+            .delay((d, i) => i * 50)
+            .on('start', function (d, i) {
+                if (i == 0) {
+                    d3.select('#birth-label')
+                        .text(`Updating to ${year} data...`);
+                }
+            })
+            .on('end', function (d, i, nodes) {
+                if (i === nodes.length - 1) {
+                    d3.select('#birth-label')
+                        .text(`Birthday data in ${year}`);
+                }
+            })
             .attr('height', (d) => height - yScale(d.births))
             .attr('y', (d) => yScale(d.births) - spaceFromBottom);
     });
