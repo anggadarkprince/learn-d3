@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn SVG</title>
+    <style>
+        svg {
+            border: 1px solid black;
+            width: 800px;
+            height: 450px;
+        }
+    </style>
+</head>
+<body>
+<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">
+    <g stroke-width="5px" stroke="blue">
+        <line x1="100" y1="100" x2="700" y2="350" stroke-width="5px"/>
+        <line x1="100" y1="350" x2="700" y2="100" stroke-width="5px"/>
+    </g>
+
+    <rect x="50" y="50" width="100" height="75" rx="7" ry="7" fill="#ffc107"
+          fill-opacity="0.5" stroke="#2196f3" stroke-width="8px"/>
+
+    <polygon points="100,200 400,200 400,500 100,500" fill="#ffc107" stroke="#2196f3"/>
+    <polygon points="400,21.5 450.5,177 614,177 481.5,273 532.5,428 400,332.5"
+             fill="yellow" stroke="black" stroke-width="3px"/>
+
+    <circle cx="400" cy="250" r="60" fill="black"/>
+    <circle cx="400" cy="240" r="60" fill="yellow"/>
+
+    <text x="400" y="430" text-anchor="middle" font-size="1.5em" font-family="sans-serif">Starry starry SVG</text>
+</svg>
+
+
+<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">
+    <path
+            d="M400 100 L500 300 L300 300 L400 100"
+            stroke="purple" stroke-width="3px" fill="none"
+    />
+    <g fill="none" stroke-width="3px">
+        <path d="M0 225 Q400 0 800 225" stroke="red"/>
+        <path d="M0 225 C400 0 0 800 800 225" stroke="blue"/>
+    </g>
+    <path d="M300 250 A100 200 90 1 0 480 300" fill="orange"/>
+    <path d="M300 250 A100 100 0 1 1 480 300" fill="purple"/>
+    <path d="M300 250 A100 100 0 0 0 480 300" fill="green"/>
+    <path d="M300 250 A100 100 0 0 1 480 300" fill="blue"/>
+</svg>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+</body>
+</html>

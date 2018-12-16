@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Birth Chart</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        svg, input {
+            margin: 0 auto 10px;
+            display: block;
+        }
+        svg .tick line {
+            stroke: #ddd;
+            stroke-dasharray: 10, 5;
+        }
+        #year-label, h3 {
+            text-align: center;
+        }
+        .tooltip {
+            opacity: 0;
+            position: fixed;
+            pointer-events: none;
+            background-color: lightblue;
+            border-radius: 5px;
+            padding: 5px 8px;
+            font-size: 12px;
+        }
+        .tooltip:before {
+            content: "";
+            position: absolute;
+            border: 12px solid transparent;
+            border-bottom-color: lightblue;
+            top: -20px;
+            left: 50%;
+            margin-left: -6px;
+        }
+        .tooltip p, h4 {
+            margin: 0;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h3>Birth Data</h3>
+    <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" id="chart-bar">
+    </svg>
+    <input type="range" step="1" id="range-bar" autofocus>
+    <p id="year-label"></p>
+</div>
+
+<hr>
+
+<div>
+    <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" id="chart-2011">
+    </svg>
+</div>
+
+<hr>
+
+<div>
+    <input type="range" step="1" id="range-histogram">
+    <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" id="chart-histogram">
+    </svg>
+</div>
+
+<hr>
+
+<div>
+    <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" id="chart-pie">
+    </svg>
+    <input type="range" step="1" id="range-pie">
+</div>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="js/birthdata.js"></script>
+<script src="js/birthdata2011.js"></script>
+<script src="js/birthdataRegion.js"></script>
+<script src="js/birthdataContinents.js"></script>
+</body>
+</html>
